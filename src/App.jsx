@@ -251,7 +251,7 @@ export default function App() {
     currentMeetingNumber = meetingNumber,
     currentMinutes = minutes,
   ) => {
-    if (currentMinutes >= 12) {
+    if (currentMinutes >= 35) {
       endSimulation();
       return;
     }
