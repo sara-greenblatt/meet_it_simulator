@@ -284,6 +284,44 @@ input:focus, select:focus { border-color: var(--secondary-lux); outline: none; }
 .input-area input { flex: 1; padding: 14px; border: 2px solid #e2dacb; border-radius: 12px; font-weight: 600; }
 .send-btn { background: var(--primary-lux); color: #fff; border: none; border-radius: 12px; padding: 0 22px; font-weight: 700; cursor: pointer; }
 .send-btn:disabled { background: #ccc; cursor: not-allowed; }
+.mic-btn { background: var(--secondary-lux); color: #000; border: none; border-radius: 12px; padding: 0 22px; font-weight: 700; cursor: pointer; }
 
 .summary-box { text-align: center; padding: 20px; background: #fffdf6; border-radius: 20px; border: 2px dashed var(--secondary-lux); margin-top: 15px; }
 .score-badge { font-size: 32px; font-weight: 900; color: var(--primary-lux); margin: 10px 0; }
+
+.summary-box--transition {
+  will-change: opacity, transform;
+  animation-fill-mode: forwards;
+}
+
+.summary-box--enter {
+  animation: summary-enter 220ms ease-out forwards;
+}
+
+.summary-box--exit {
+  animation: summary-exit 280ms ease-in forwards;
+}
+
+@keyframes summary-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes summary-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+}
